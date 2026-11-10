@@ -3,92 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Video Studio Pro - Free AI Suite</title>
+    <title>Mobile Shooter Arena - Free Fire Style</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background: #0f172a; color: #f8fafc; padding: 20px; }
-        .container { max-width: 600px; margin: 0 auto; }
-        header { text-align: center; margin-bottom: 25px; }
-        header h1 { font-size: 24px; color: #38bdf8; margin-bottom: 5px; }
-        header p { color: #94a3b8; font-size: 13px; }
-        .free-banner { background: linear-gradient(135deg, #059669, #10b981); color: white; padding: 10px; border-radius: 8px; text-align: center; font-size: 14px; font-weight: bold; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
-        .card { background: #1e293b; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); border: 1px solid #334155; }
-        .card h2 { font-size: 17px; margin-bottom: 12px; color: #e2e8f0; display: flex; align-items: center; gap: 8px; }
-        textarea, input[type="text"], select { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #475569; background: #0f172a; color: #fff; margin-bottom: 12px; font-size: 14px; outline: none; }
-        textarea { resize: none; }
-        .btn { display: block; width: 100%; padding: 12px; background: linear-gradient(135deg, #0284c7, #2563eb); color: white; border: none; border-radius: 8px; font-size: 15px; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        .btn:hover { opacity: 0.9; }
-        .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .feature-box { background: #334155; padding: 12px; border-radius: 8px; text-align: center; cursor: pointer; transition: 0.2s; border: 1px solid transparent; }
-        .feature-box:hover { background: #475569; border-color: #38bdf8; }
-        .feature-box span { font-size: 22px; display: block; margin-bottom: 4px; }
-        .feature-box p { font-size: 12px; color: #cbd5e1; font-weight: 500; }
-        .badge { background: #10b981; color: white; font-size: 10px; padding: 2px 6px; border-radius: 4px; float: right; }
+        body { background: #0f172a; color: #fff; text-align: center; overflow: hidden; touch-action: none; }
+        #game-container { position: relative; width: 100vw; height: 100vh; display: flex; flex-direction: column; justify-content: space-between; align-items: center; background: radial-gradient(circle, #1e293b 0%, #0f172a 100%); }
+        header { padding: 10px; background: rgba(15, 23, 42, 0.9); width: 100%; display: flex; justify-content: space-around; font-size: 16px; font-weight: bold; border-bottom: 1px solid #334155; }
+        .score-board { color: #38bdf8; }
+        .health-board { color: #f43f5e; }
+        
+        #canvas-area { position: relative; flex-grow: 1; width: 100%; overflow: hidden; background: #111827; }
+        
+        /* Game Elements */
+        .target { position: absolute; width: 50px; height: 50px; background: #ef4444; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; cursor: pointer; box-shadow: 0 0 10px #ef4444; transition: transform 0.1s; }
+        .player-gun { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); font-size: 40px; }
+
+        /* Controls */
+        .controls { padding: 15px; width: 100%; background: #1e293b; display: flex; justify-content: space-around; align-items: center; }
+        .action-btn { background: #0284c7; color: white; border: none; padding: 15px 25px; font-size: 18px; font-weight: bold; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .action-btn:active { background: #0369a1; transform: scale(0.95); }
+        .shoot-btn { background: #ef4444; }
+        .shoot-btn:active { background: #dc2626; }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div id="game-container">
         <header>
-            <h1>AI Video Studio Pro 🎬</h1>
-            <p>Next-Gen Artificial Intelligence Content Suite</p>
+            <div class="score-board">Score: <span id="score">0</span></div>
+            <div class="health-board">Target: Destroy Enemies!</div>
         </header>
 
-        <!-- 100% Free Access Banner -->
-        <div class="free-banner">
-            🎉 All Premium AI Features Available 100% Free! No Subscription Required.
+        <div id="canvas-area">
+            <div class="target" id="enemy" style="top: 50px; left: 100px;" onclick="hitEnemy()">🎯</div>
+            <div class="player-gun">🔫</div>
         </div>
 
-        <!-- Feature Selector Grid -->
-        <div class="card">
-            <h2>Select AI Engine <span class="badge">FREE</span></h2>
-            <div class="features-grid">
-                <div class="feature-box">
-                    <span>✨</span>
-                    <p>Text-to-Video</p>
-                </div>
-                <div class="feature-box">
-                    <span>🎙️</span>
-                    <p>Voice Cloning</p>
-                </div>
-                <div class="feature-box">
-                    <span>🪄</span>
-                    <p>AI Enhancer</p>
-                </div>
-                <div class="feature-box">
-                    <span>💬</span>
-                    <p>AI Script Chatbot</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 1. Text to Video Section -->
-        <div class="card">
-            <h2>✨ 1. Text-to-Video Generator (Free)</h2>
-            <textarea rows="3" placeholder="Describe your video prompt (e.g., Cinematic drone shot of mountains at sunset)..."></textarea>
-            <button class="btn" onclick="alert('Generating Free AI Video... Processing your request!')">Generate Free Video 🚀</button>
-        </div>
-
-        <!-- 2. Voice Cloning Section -->
-        <div class="card">
-            <h2>🎙️ 2. AI Voice Cloning & Speech (Free)</h2>
-            <input type="text" placeholder="Type text you want the AI voice to speak...">
-            <select>
-                <option>Select Free Voice Model (e.g., Cinematic Male)</option>
-                <option>Professional Narrator (Female)</option>
-                <option>Deep Cinematic Voice</option>
-            </select>
-            <button class="btn" style="background: linear-gradient(135deg, #059669, #10b981);" onclick="alert('Synthesizing voice for free...')">Synthesize Voice ⚡</button>
-        </div>
-
-        <!-- 3. AI Script Chatbot Section -->
-        <div class="card">
-            <h2>💬 3. AI Script & Prompt Assistant (Free)</h2>
-            <input type="text" placeholder="Ask AI for video script ideas or viral hooks...">
-            <button class="btn" style="background: linear-gradient(135deg, #7c3aed, #a855f7);" onclick="alert('AI Assistant generating free viral video scripts...')">Generate Script 💡</button>
+        <div class="controls">
+            <button class="action-btn" onclick="moveLeft()">⬅️ Move</button>
+            <button class="action-btn shoot-btn" onclick="shootEnemy()">🔥 FIRE</button>
+            <button class="action-btn" onclick="moveRight()">Move ➡️</button>
         </div>
     </div>
 
+    <script>
+        let score = 0;
+        let enemyPos = 100;
+
+        function hitEnemy() {
+            score += 10;
+            document.getElementById('score').innerText = score;
+            respawnEnemy();
+        }
+
+        function shootEnemy() {
+            // Fire action simulation
+            score += 5;
+            document.getElementById('score').innerText = score;
+            respawnEnemy();
+        }
+
+        function respawnEnemy() {
+            const enemy = document.getElementById('enemy');
+            const randomX = Math.floor(Math.random() * (window.innerWidth - 70));
+            const randomY = Math.floor(Math.random() * 200) + 20;
+            enemy.style.left = randomX + 'px';
+            enemy.style.top = randomY + 'px';
+        }
+
+        function moveLeft() {
+            const enemy = document.getElementById('enemy');
+            let currentLeft = parseInt(enemy.style.left);
+            if(currentLeft > 30) {
+                enemy.style.left = (currentLeft - 30) + 'px';
+            }
+        }
+
+        function moveRight() {
+            const enemy = document.getElementById('enemy');
+            let currentLeft = parseInt(enemy.style.left);
+            if(currentLeft < window.innerWidth - 80) {
+                enemy.style.left = (currentLeft + 30) + 'px';
+            }
+        }
+    </script>
+
 </body>
 </html>
-
