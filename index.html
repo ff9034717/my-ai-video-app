@@ -1,12 +1,67 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Video App</title>
+    <title>AI Video Studio Pro</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: #0f172a; color: #f8fafc; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 30px; }
+        header h1 { font-size: 24px; color: #38bdf8; margin-bottom: 8px; }
+        header p { color: #94a3b8; font-size: 14px; }
+        .card { background: #1e293b; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); border: 1px solid #334155; }
+        .card h2 { font-size: 18px; margin-bottom: 12px; color: #e2e8f0; }
+        textarea, input[type="text"] { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #475569; background: #0f172a; color: #fff; margin-bottom: 12px; resize: none; font-size: 14px; }
+        .btn { display: block; width: 100%; padding: 12px; background: linear-gradient(135deg, #0284c7, #2563eb); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .btn:hover { opacity: 0.9; }
+        .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .feature-box { background: #334155; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; transition: 0.2s; }
+        .feature-box:hover { background: #475569; }
+        .feature-box span { font-size: 24px; display: block; margin-bottom: 5px; }
+        .feature-box p { font-size: 13px; color: #cbd5e1; }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My AI Video App! 🚀</h1>
-    <p>Everything is working perfectly!</p>
+
+    <div class="container">
+        <header>
+            <h1>AI Video Studio Pro 🎬</h1>
+            <p>Create, Edit & Transform Videos with Artificial Intelligence</p>
+        </header>
+
+        <!-- Main Feature Selector -->
+        <div class="card">
+            <h2>Select AI Tool</h2>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <span>✨</span>
+                    <p>Text to Video</p>
+                </div>
+                <div class="feature-box">
+                    <span>🎙️</span>
+                    <p>Audio to Video</p>
+                </div>
+                <div class="feature-box">
+                    <span>🪄</span>
+                    <p>AI Video Enhancer</p>
+                </div>
+                <div class="feature-box">
+                    <span>🗣️</span>
+                    <p>Voice Cloning</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Text to Video Generator Input Section -->
+        <div class="card">
+            <h2>Text to Video Generator</h2>
+            <textarea rows="3" placeholder="Enter your prompt here (e.g., A cinematic drone shot of a futuristic city in rain)..."></textarea>
+            <button class="btn" onclick="alert('AI Engine is initializing... Ready for backend integration!')">Generate Video 🚀</button>
+        </div>
+    </div>
+
 </body>
 </html>
