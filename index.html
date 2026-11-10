@@ -1,27 +1,29 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Video Studio Pro</title>
+    <title>AI Video Studio Pro - Free AI Suite</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background: #0f172a; color: #f8fafc; padding: 20px; }
         .container { max-width: 600px; margin: 0 auto; }
-        header { text-align: center; margin-bottom: 30px; }
-        header h1 { font-size: 24px; color: #38bdf8; margin-bottom: 8px; }
-        header p { color: #94a3b8; font-size: 14px; }
+        header { text-align: center; margin-bottom: 25px; }
+        header h1 { font-size: 24px; color: #38bdf8; margin-bottom: 5px; }
+        header p { color: #94a3b8; font-size: 13px; }
+        .free-banner { background: linear-gradient(135deg, #059669, #10b981); color: white; padding: 10px; border-radius: 8px; text-align: center; font-size: 14px; font-weight: bold; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
         .card { background: #1e293b; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); border: 1px solid #334155; }
-        .card h2 { font-size: 18px; margin-bottom: 12px; color: #e2e8f0; }
-        textarea, input[type="text"] { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #475569; background: #0f172a; color: #fff; margin-bottom: 12px; resize: none; font-size: 14px; }
-        .btn { display: block; width: 100%; padding: 12px; background: linear-gradient(135deg, #0284c7, #2563eb); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .card h2 { font-size: 17px; margin-bottom: 12px; color: #e2e8f0; display: flex; align-items: center; gap: 8px; }
+        textarea, input[type="text"], select { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #475569; background: #0f172a; color: #fff; margin-bottom: 12px; font-size: 14px; outline: none; }
+        textarea { resize: none; }
+        .btn { display: block; width: 100%; padding: 12px; background: linear-gradient(135deg, #0284c7, #2563eb); color: white; border: none; border-radius: 8px; font-size: 15px; font-weight: bold; cursor: pointer; transition: 0.3s; }
         .btn:hover { opacity: 0.9; }
         .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .feature-box { background: #334155; padding: 15px; border-radius: 8px; text-align: center; cursor: pointer; transition: 0.2s; }
-        .feature-box:hover { background: #475569; }
-        .feature-box span { font-size: 24px; display: block; margin-bottom: 5px; }
-        .feature-box p { font-size: 13px; color: #cbd5e1; }
+        .feature-box { background: #334155; padding: 12px; border-radius: 8px; text-align: center; cursor: pointer; transition: 0.2s; border: 1px solid transparent; }
+        .feature-box:hover { background: #475569; border-color: #38bdf8; }
+        .feature-box span { font-size: 22px; display: block; margin-bottom: 4px; }
+        .feature-box p { font-size: 12px; color: #cbd5e1; font-weight: 500; }
+        .badge { background: #10b981; color: white; font-size: 10px; padding: 2px 6px; border-radius: 4px; float: right; }
     </style>
 </head>
 <body>
@@ -29,39 +31,64 @@
     <div class="container">
         <header>
             <h1>AI Video Studio Pro 🎬</h1>
-            <p>Create, Edit & Transform Videos with Artificial Intelligence</p>
+            <p>Next-Gen Artificial Intelligence Content Suite</p>
         </header>
 
-        <!-- Main Feature Selector -->
+        <!-- 100% Free Access Banner -->
+        <div class="free-banner">
+            🎉 All Premium AI Features Available 100% Free! No Subscription Required.
+        </div>
+
+        <!-- Feature Selector Grid -->
         <div class="card">
-            <h2>Select AI Tool</h2>
+            <h2>Select AI Engine <span class="badge">FREE</span></h2>
             <div class="features-grid">
                 <div class="feature-box">
                     <span>✨</span>
-                    <p>Text to Video</p>
+                    <p>Text-to-Video</p>
                 </div>
                 <div class="feature-box">
                     <span>🎙️</span>
-                    <p>Audio to Video</p>
+                    <p>Voice Cloning</p>
                 </div>
                 <div class="feature-box">
                     <span>🪄</span>
-                    <p>AI Video Enhancer</p>
+                    <p>AI Enhancer</p>
                 </div>
                 <div class="feature-box">
-                    <span>🗣️</span>
-                    <p>Voice Cloning</p>
+                    <span>💬</span>
+                    <p>AI Script Chatbot</p>
                 </div>
             </div>
         </div>
 
-        <!-- Text to Video Generator Input Section -->
+        <!-- 1. Text to Video Section -->
         <div class="card">
-            <h2>Text to Video Generator</h2>
-            <textarea rows="3" placeholder="Enter your prompt here (e.g., A cinematic drone shot of a futuristic city in rain)..."></textarea>
-            <button class="btn" onclick="alert('AI Engine is initializing... Ready for backend integration!')">Generate Video 🚀</button>
+            <h2>✨ 1. Text-to-Video Generator (Free)</h2>
+            <textarea rows="3" placeholder="Describe your video prompt (e.g., Cinematic drone shot of mountains at sunset)..."></textarea>
+            <button class="btn" onclick="alert('Generating Free AI Video... Processing your request!')">Generate Free Video 🚀</button>
+        </div>
+
+        <!-- 2. Voice Cloning Section -->
+        <div class="card">
+            <h2>🎙️ 2. AI Voice Cloning & Speech (Free)</h2>
+            <input type="text" placeholder="Type text you want the AI voice to speak...">
+            <select>
+                <option>Select Free Voice Model (e.g., Cinematic Male)</option>
+                <option>Professional Narrator (Female)</option>
+                <option>Deep Cinematic Voice</option>
+            </select>
+            <button class="btn" style="background: linear-gradient(135deg, #059669, #10b981);" onclick="alert('Synthesizing voice for free...')">Synthesize Voice ⚡</button>
+        </div>
+
+        <!-- 3. AI Script Chatbot Section -->
+        <div class="card">
+            <h2>💬 3. AI Script & Prompt Assistant (Free)</h2>
+            <input type="text" placeholder="Ask AI for video script ideas or viral hooks...">
+            <button class="btn" style="background: linear-gradient(135deg, #7c3aed, #a855f7);" onclick="alert('AI Assistant generating free viral video scripts...')">Generate Script 💡</button>
         </div>
     </div>
 
 </body>
 </html>
+
